@@ -5,7 +5,7 @@ import 'package:tpsl_printer/printer/wifi_communication.dart';
 
 class TpslPrinter {
   static WifiCommunication? wifiCommunication;
-  static connect(String ip, {int? port}) async {
+  static connect(String ip, {int port = 9100}) async {
     TpslPrinter.wifiCommunication = WifiCommunication(
         WifiHandler(
             onConnected: (){
@@ -25,7 +25,7 @@ class TpslPrinter {
             }
         )
     );
-    int result = await TpslPrinter.wifiCommunication!.initSocket("192.168.1.245", 9100);
+    int result = await TpslPrinter.wifiCommunication!.initSocket(ip, port);
     return result == 1 ? true : false;
   }
   static Future<bool> send(Uint8List data,{int printTime = 1,int width = 380, height = 275}) async {
