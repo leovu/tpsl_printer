@@ -26,7 +26,7 @@ class TpslPrinter {
         )
     );
     int result = await TpslPrinter.wifiCommunication!.initSocket(ip, port);
-    return result == 1 ? true : false;
+    return result == 0 ? true : false;
   }
   static Future<bool> send(Uint8List data,{int printTime = 1,int width = 380, height = 275}) async {
     bool result = true;
