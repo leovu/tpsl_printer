@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // im.Image? img = im.decodePng(value!);
       // im.Image img = LabelUtils.toGrayscale(value!, 200, 80);
       // image = img.getBytes();
-      printer.printWifiTspl(2, 380, 275, value!, this.wifiCommunication, "init", "");
+      printer.printWifiTspl(2, 380, 275, value!, wifiCommunication, "init", "");
       // printer.printWifiTSPLTemplate(1, 250, 40, this.wifiCommunication);
     } catch (e) {
       print(e);

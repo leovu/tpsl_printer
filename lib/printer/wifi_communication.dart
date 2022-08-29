@@ -37,7 +37,7 @@ class WifiCommunication{
   void close() {
     try {
       if (_client != null) {
-        _client!.flush();
+        // _client!.flush();
         _client!.close();
         _client!.destroy();
       }
